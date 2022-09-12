@@ -71,5 +71,30 @@ public class Example
         Console.WriteLine("Thread {0} previous semaphore count: {1}",
             num, _pool.Release());
     }
+
+    // Sample output from this program:
+    //
+    // Thread 1 begins and waits for the semaphore.
+    // Thread 2 begins and waits for the semaphore.
+    // Thread 3 begins and waits for the semaphore.
+    // Thread 4 begins and waits for the semaphore.
+    // Thread 5 begins and waits for the semaphore.
+    // Main thread calls Release(3).
+    // Main thread exits.
+    // Thread 1 enters the semaphore.
+    // Thread 3 enters the semaphore.
+    // Thread 2 enters the semaphore.
+    // Thread 1 releases the semaphore.
+    // Thread 4 enters the semaphore.
+    // Thread 1 previous semaphore count: 0
+    // Thread 2 releases the semaphore.
+    // Thread 2 previous semaphore count: 0
+    // Thread 5 enters the semaphore.
+    // Thread 3 releases the semaphore.
+    // Thread 3 previous semaphore count: 0
+    // Thread 4 releases the semaphore.
+    // Thread 4 previous semaphore count: 1
+    // Thread 5 releases the semaphore.
+    // Thread 5 previous semaphore count: 2
 }
 //</Snippet1>
